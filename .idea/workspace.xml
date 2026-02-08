@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d070fdee-a190-4895-b7ad-e0a499ba55f8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/common-script.sh" beforeDir="false" afterPath="$PROJECT_DIR$/common-script.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodb.sh" beforeDir="false" afterPath="$PROJECT_DIR$/mongodb.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
