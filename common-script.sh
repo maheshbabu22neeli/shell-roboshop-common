@@ -24,9 +24,9 @@ check_root(){
 
 VALIDATE() {
   if ($1 ne 0) then
-    LOG_MESSAGE $R $2
+    LOG_MESSAGE $R "$2"
     exit 1
   else
-    LOG_MESSAGE $G $2
+    LOG_MESSAGE $G "$2"
   fi
 }
