@@ -54,8 +54,8 @@ APP_SETUP() {
     mkdir -p /app
     VALIDATE $? "Creating app directory"
 
-    curl -o /tmp/$app_name.zip https://roboshop-artifacts.s3.amazonaws.com/$app_name-v3.zip  &>>$LOGS_FILE
-    VALIDATE $? "Downloading $app_name code"
+    curl -o /tmp/$APP_NAME.zip https://roboshop-artifacts.s3.amazonaws.com/$APP_NAME-v3.zip  &>>$LOGS_FILE
+    VALIDATE $? "Downloading $APP_NAME code"
 
     cd /app
     VALIDATE $? "Moving to app directory"
@@ -65,8 +65,8 @@ APP_SETUP() {
 
     ls -la
 
-    unzip /tmp/$app_name.zip &>>$LOGS_FILE
-    VALIDATE $? "Uzip $app_name code"
+    unzip /tmp/$APP_NAME.zip &>>$LOGS_FILE
+    VALIDATE $? "Uzip $APP_NAME code"
 }
 
 NODEJS_SETUP() {
