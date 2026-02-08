@@ -1,8 +1,11 @@
 #!/bin/bash
 
 USERID=$(id -u)                         # to find the user details
+
 LOGS_FOLDER="/var/log/shell-roboshop"   # to send the logs to a particular location/folder
 LOGS_FILE="$LOGS_FOLDER/$0.log"         # logs file name
+
+START_TIME=$(date +%s)
 
 R="\e[31m"
 G="\e[32m"
@@ -27,4 +30,10 @@ VALIDATE(){
     else
         echo -e "$(date "+%Y-%m-%d %H:%M:%S") | $2 ... $G SUCCESS $N" | tee -a $LOGS_FILE
     fi
+}
+
+PRINT_TOTAL_TIME(){
+    END_TIME=$(date +%s)
+    TOTAL_TIME=$(( $END_TIME - $START_TIME ))
+    echo -e "$(date "+%Y-%m-%d %H:%M:%S") | Script execute in: $G $TOTAL_TIME seconds $N" | tee -a $LOGS_FILE
 }
