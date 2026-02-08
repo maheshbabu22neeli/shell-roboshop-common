@@ -2,6 +2,7 @@
 
 USERID=$(id -u)                         # to find the user details
 
+# Host names
 MONGODB_HOST=mongodb.neeli.online
 
 LOGS_FOLDER="/var/log/shell-roboshop"   # to send the logs to a particular location/folder
