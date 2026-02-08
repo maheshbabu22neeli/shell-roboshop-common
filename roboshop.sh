@@ -5,7 +5,7 @@ DOMAIN_NAME="neeli.online"
 SG_ID="sg-09b115c1d01c0b270"
 AMI_ID="ami-0220d79f3f480ecf5"
 INSTANCE_TYPE="t3.micro"
-ROUT53_HOSTED_ZONE_ID="Z013175831RO1NWFBESW7"
+ROUTE53_HOSTED_ZONE_ID="Z013175831RO1NWFBESW7"
 
 for instance in "$@"
 do
@@ -39,7 +39,7 @@ do
   echo "IP Address: $IP"
 
   aws route53 change-resource-record-sets \
-  --hosted-zone-id $ROUT53_HOSTED_ZONE_ID \
+  --hosted-zone-id $ROUTE53_HOSTED_ZONE_ID \
   --change-batch '
   {
     "Comment": "Updating record",
