@@ -9,11 +9,9 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-mkdir $LOGS_FOLDER
+mkdir -p $LOGS_FOLDER
 
-LOG_MESSAGE() {
-  echo "$(date "+%Y-%m-%d %H:%M:%S") | $1 $2 $N" | tee -a $LOGS_FILE
-}
+echo "$(date "+%Y-%m-%d %H:%M:%S") | Script started executing at: $(date)" | tee -a $LOGS_FILE
 
 check_root(){
     if [ $USERID -ne 0 ]; then
@@ -22,11 +20,11 @@ check_root(){
     fi
 }
 
-VALIDATE() {
-  if ($1 ne 0) then
-    LOG_MESSAGE $R "$2"
-    exit 1
-  else
-    LOG_MESSAGE $G "$2"
-  fi
+VALIDATE(){
+    if [ $1 -ne 0 ]; then
+        echo -e "$(date "+%Y-%m-%d %H:%M:%S") | $2 ... $R FAILURE $N" | tee -a $LOGS_FILE
+        exit 1
+    else
+        echo -e "$(date "+%Y-%m-%d %H:%M:%S") | $2 ... $G SUCCESS $N" | tee -a $LOGS_FILE
+    fi
 }
