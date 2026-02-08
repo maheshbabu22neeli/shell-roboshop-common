@@ -6,7 +6,7 @@ Deploying services using Shell Script
 ![img.png](roboshop-3tier-architecture.png)
 
 
-### Solution
+### Solution 
 
 #### Databases
 
